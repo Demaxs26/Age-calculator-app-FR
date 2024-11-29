@@ -27,7 +27,7 @@ main{
     padding: 3vw;
     border-radius: 3vw;
     background-color: var(--White);
-
+    width: 60vw;
 }
 
 fieldset{
@@ -43,14 +43,51 @@ fieldset{
     flex-direction: column;
 }
 
+
+.wrapper:has(+ .wrapper){
+    margin-right: 2rem;
+}
+
+
 .text-label{
     font-size: 14px;
-    color:var(--Smokey-grey)
+    color:var(--Smokey-grey);
+    letter-spacing: 0.3rem;
+    margin-bottom: 0.3rem;
 }
 
 input[type="number"]{
-    border : var(--Light-grey) 1px solid;
+    border: var(--Smokey-grey) 1px solid;
     width: 8vw;
     height: 4vw;
     border-radius: 5px;
+    padding: 1vh 1.5vw;
+    font-size: 32px;
+    color: var(--Off-black);
+    font-weight: 400;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+:focus-visible {
+    outline: unset;
+}
+
+
+.display{
+    color: var(--Purple);
+    font-size: 80px;
+    font-weight: 800;
+}
+
+.display span{
+    color: var(--Off-black);
+}
+#separator{
+    border-bottom : var(--Smokey-grey) 1px solid;
 }
