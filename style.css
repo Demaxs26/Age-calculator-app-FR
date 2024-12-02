@@ -27,7 +27,7 @@ main{
     padding: 3vw;
     border-radius: 3vw;
     background-color: var(--White);
-    width: 60vw;
+    width: 55vw;
 }
 
 fieldset{
@@ -50,7 +50,7 @@ fieldset{
 
 
 .text-label{
-    font-size: 14px;
+    font-size: 1vw;
     color:var(--Smokey-grey);
     letter-spacing: 0.3rem;
     margin-bottom: 0.3rem;
@@ -62,9 +62,11 @@ input[type="number"]{
     height: 4vw;
     border-radius: 5px;
     padding: 1vh 1.5vw;
-    font-size: 32px;
+    font-size: 2.5vw;
     color: var(--Off-black);
-    font-weight: 400;
+    font-weight: 600;
+    cursor: pointer;
+    
 }
 
 
@@ -81,7 +83,7 @@ input::-webkit-inner-spin-button {
 
 .display{
     color: var(--Purple);
-    font-size: 80px;
+    font-size: 13vh;
     font-weight: 800;
 }
 
@@ -90,4 +92,25 @@ input::-webkit-inner-spin-button {
 }
 #separator{
     border-bottom : var(--Smokey-grey) 1px solid;
+    width: max-width;
+    position:relative;
+    margin-top: 8vh;
+}
+
+.btn-calcul{
+    border-radius: 100%;
+    background-color: var(--Purple);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right : 0px;
+    bottom: -40px;
+    cursor: pointer;
+}
+
+.btn-calcul:hover{
+    background-color: var(--Off-black);
 }
