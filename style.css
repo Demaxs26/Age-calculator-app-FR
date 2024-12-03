@@ -8,6 +8,7 @@
     --Light-grey: hsl(0, 0%, 86%);
     --Smokey-grey: hsl(0, 1%, 44%);
     --Off-black: hsl(0, 0%, 8%);
+    --cle : 60vw;
 }
 
 *{
@@ -83,8 +84,9 @@ input::-webkit-inner-spin-button {
 
 .display{
     color: var(--Purple);
-    font-size: 13vh;
+    font-size: 5.8vw;
     font-weight: 800;
+    margin-top: -4vh;
 }
 
 .display span{
@@ -94,23 +96,31 @@ input::-webkit-inner-spin-button {
     border-bottom : var(--Smokey-grey) 1px solid;
     width: max-width;
     position:relative;
-    margin-top: 8vh;
+    margin: 8vh 0;
 }
 
 .btn-calcul{
     border-radius: 100%;
     background-color: var(--Purple);
-    width: 80px;
-    height: 80px;
+    width: 6.5vw;
+    height: 6.5vw;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
     right : 0px;
-    bottom: -40px;
+    bottom: -3.25vw;
     cursor: pointer;
 }
 
 .btn-calcul:hover{
     background-color: var(--Off-black);
+}
+
+@media screen and (max-width: 765px ){
+    main{
+        width: 80vw;
+        position: relative;
+        height: calc(500px - 30vw);
+    }
 }
