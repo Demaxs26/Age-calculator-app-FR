@@ -9,6 +9,7 @@
     --Smokey-grey: hsl(0, 1%, 44%);
     --Off-black: hsl(0, 0%, 8%);
     --cle : 60vw;
+    --taille: 1vw;
 }
 
 *{
@@ -25,10 +26,10 @@ body{
 }
 
 main{
-    padding: 3vw;
-    border-radius: 3vw;
+    padding: calc(3*var(--taille));
+    border-radius: calc(3*var(--taille));
     background-color: var(--White);
-    width: 55vw;
+    width: calc(55*var(--taille));
 }
 
 fieldset{
@@ -51,7 +52,7 @@ fieldset{
 
 
 .text-label{
-    font-size: 1vw;
+    font-size: calc(1*var(--taille));
     color:var(--Smokey-grey);
     letter-spacing: 0.3rem;
     margin-bottom: 0.3rem;
@@ -59,11 +60,11 @@ fieldset{
 
 input[type="number"]{
     border: var(--Smokey-grey) 1px solid;
-    width: 8vw;
-    height: 4vw;
+    width: calc(8*var(--taille));
+    height: calc(4*var(--taille));
     border-radius: 5px;
-    padding: 1vh 1.5vw;
-    font-size: 2.5vw;
+    padding: 1vh calc(1.5*var(--taille));
+    font-size: calc(2.5*var(--taille));
     color: var(--Off-black);
     font-weight: 600;
     cursor: pointer;
@@ -84,7 +85,7 @@ input::-webkit-inner-spin-button {
 
 .display{
     color: var(--Purple);
-    font-size: 5.8vw;
+    font-size: calc(5.8*var(--taille));
     font-weight: 800;
     margin-top: -4vh;
 }
@@ -102,14 +103,14 @@ input::-webkit-inner-spin-button {
 .btn-calcul{
     border-radius: 100%;
     background-color: var(--Purple);
-    width: 6.5vw;
-    height: 6.5vw;
+    width: calc(6.5*var(--taille));
+    height: calc(6.5*var(--taille));
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
     right : 0px;
-    bottom: -3.25vw;
+    bottom: calc(-3.25*var(--taille));
     cursor: pointer;
 }
 
@@ -119,8 +120,16 @@ input::-webkit-inner-spin-button {
 
 @media screen and (max-width: 765px ){
     main{
-        width: 80vw;
+        width: calc(55*var(--taille));
         position: relative;
-        height: calc(500px - 30vw);
+        height: calc(500px - 20vw);
     }
+    :root{
+        --taille: 1.4vw;
+    }
+
+}
+
+@media screen and (max-width:414px ){
+
 }
