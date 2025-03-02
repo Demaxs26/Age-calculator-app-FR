@@ -29,7 +29,11 @@ main{
     padding: calc(3*var(--taille));
     border-radius: calc(3*var(--taille));
     background-color: var(--White);
-    width: calc(55*var(--taille));
+    height: calc(100vh - 5rem);
+    max-height: 550px;
+    width: calc(100vw - 20rem);
+    max-width: 900px;
+    border-bottom-right-radius: 15vw;
 }
 
 fieldset{
@@ -52,23 +56,30 @@ fieldset{
 
 
 .text-label{
-    font-size: calc(1*var(--taille));
+    font-size: 0.8rem;
     color:var(--Smokey-grey);
     letter-spacing: 0.3rem;
     margin-bottom: 0.3rem;
+    font-weight: 600;
 }
 
 input[type="number"]{
-    border: var(--Smokey-grey) 1px solid;
-    width: calc(8*var(--taille));
-    height: calc(4*var(--taille));
+    border: var(--Light-grey) 1px solid;
+    width: calc(20vw);
+    max-width: 8rem;
+    height: 3.8rem;
     border-radius: 5px;
     padding: 1vh calc(1.5*var(--taille));
-    font-size: calc(2.5*var(--taille));
+    font-size: 2.1rem;
     color: var(--Off-black);
     font-weight: 600;
     cursor: pointer;
     
+}
+
+
+input[type="number"]:focus{
+    border-color: var(--Smokey-grey);
 }
 
 
@@ -85,7 +96,7 @@ input::-webkit-inner-spin-button {
 
 .display{
     color: var(--Purple);
-    font-size: calc(5.8*var(--taille));
+    font-size: 5.6rem;
     font-weight: 800;
     margin-top: -4vh;
 }
@@ -94,7 +105,7 @@ input::-webkit-inner-spin-button {
     color: var(--Off-black);
 }
 #separator{
-    border-bottom : var(--Smokey-grey) 1px solid;
+    border-bottom : var(--Light-grey) 1px solid;
     width: max-width;
     position:relative;
     margin: 8vh 0;
@@ -103,14 +114,14 @@ input::-webkit-inner-spin-button {
 .btn-calcul{
     border-radius: 100%;
     background-color: var(--Purple);
-    width: calc(6.5*var(--taille));
-    height: calc(6.5*var(--taille));
+    width: 6rem;
+    height: 6rem;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
     right : 0px;
-    bottom: calc(-3.25*var(--taille));
+    bottom: -3rem;
     cursor: pointer;
 }
 
@@ -118,18 +129,17 @@ input::-webkit-inner-spin-button {
     background-color: var(--Off-black);
 }
 
-@media screen and (max-width: 765px ){
+@media screen and (max-width: 850px ){
     main{
-        width: calc(55*var(--taille));
-        position: relative;
-        height: calc(500px - 20vw);
+        background-color: red;
+        width: calc(100vw - 5rem);
     }
-    :root{
-        --taille: 1.4vw;
+    .btn-calcul{
+        right: 40%
     }
 
-}
-
-@media screen and (max-width:414px ){
+    fieldset{
+        justify-content: space-evenly;
+    }
 
 }
