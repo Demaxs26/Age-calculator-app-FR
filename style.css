@@ -143,3 +143,26 @@ input::-webkit-inner-spin-button {
     }
 
 }
+
+@media screen and (max-width: 570px){
+    main{
+        height: max-content;
+        width: 90vw;
+    }
+    .display{
+        font-size: 14vw;
+        padding-top: 10px;
+    }
+    .btn-calcul{
+        width: calc(25vw - 2rem);
+        max-width: 90px;
+        height: calc(25vw - 2rem);
+        max-height: 90px;
+        bottom: -calc(12.5vw - 1rem);
+    }
+
+    input[type="number"]{
+       
+       
+    }
+}
