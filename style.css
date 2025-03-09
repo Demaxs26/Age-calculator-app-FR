@@ -26,6 +26,7 @@ body{
 }
 
 main{
+   
     padding: calc(3*var(--taille));
     border-radius: calc(3*var(--taille));
     background-color: var(--White);
@@ -129,9 +130,38 @@ input::-webkit-inner-spin-button {
     background-color: var(--Off-black);
 }
 
+.tiret{
+
+    clip-path: polygon(100% 20%,
+                        100% 100%,
+                        20% 100%
+                        0% 0%);
+}
+.parallelogramme {
+    width  : 100px;
+    height : 0;
+    border-top  : 50px solid var(--Purple);
+    border-right : 20px solid transparent;
+    position : relative;
+  }
+.parallelogramme:before {
+    width  : 0;
+    height : 0;
+    content: '';
+    border-bottom : 50px solid var(--Purple);
+    border-right  : 20px solid transparent;
+    border-left   : 20px solid transparent;
+    position : absolute;
+    top  : -50px;
+    left: -20%;
+  }
+.wrapper-tirret{
+    display: flex;
+}
+  
+
 @media screen and (max-width: 850px ){
     main{
-        background-color: red;
         width: calc(100vw - 5rem);
     }
     .btn-calcul{
@@ -161,8 +191,4 @@ input::-webkit-inner-spin-button {
         bottom: -calc(12.5vw - 1rem);
     }
 
-    input[type="number"]{
-       
-       
-    }
 }
