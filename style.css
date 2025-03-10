@@ -100,10 +100,15 @@ input::-webkit-inner-spin-button {
     font-size: 5.6rem;
     font-weight: 800;
     margin-top: -4vh;
+    display: flex;
+
 }
 
-.display span{
+.display  span{
     color: var(--Off-black);
+    font-size: 5.6rem;
+    font-weight: 800;
+    margin-left: 5vw;
 }
 #separator{
     border-bottom : var(--Light-grey) 1px solid;
@@ -130,35 +135,34 @@ input::-webkit-inner-spin-button {
     background-color: var(--Off-black);
 }
 
-.tiret{
 
-    clip-path: polygon(100% 20%,
-                        100% 100%,
-                        20% 100%
-                        0% 0%);
-}
 .parallelogramme {
-    width  : 100px;
+    align-self: center;
+    width  : 50px;
     height : 0;
-    border-top  : 50px solid var(--Purple);
-    border-right : 20px solid transparent;
+    border-top  : 25px solid var(--Purple);
+    border-right : 10px solid transparent;
     position : relative;
-  }
+}
 .parallelogramme:before {
     width  : 0;
     height : 0;
     content: '';
-    border-bottom : 50px solid var(--Purple);
-    border-right  : 20px solid transparent;
-    border-left   : 20px solid transparent;
+    border-bottom : 25px solid var(--Purple);
+    border-right  : 10px solid transparent;
+    border-left   : 10px solid transparent;
     position : absolute;
-    top  : -50px;
+    top  : -25px;
     left: -20%;
-  }
+}
 .wrapper-tirret{
     display: flex;
 }
   
+
+.parallelogramme:has(+ .parallelogramme){
+    margin-right: 30px;
+}
 
 @media screen and (max-width: 850px ){
     main{
@@ -170,6 +174,9 @@ input::-webkit-inner-spin-button {
 
     fieldset{
         justify-content: space-evenly;
+    }
+    .display span{
+        font-size: 11vw;
     }
 
 }
@@ -183,12 +190,38 @@ input::-webkit-inner-spin-button {
         font-size: 14vw;
         padding-top: 10px;
     }
+    .display span{
+        font-size: 14vw;
+    }
     .btn-calcul{
         width: calc(25vw - 2rem);
         max-width: 90px;
         height: calc(25vw - 2rem);
         max-height: 90px;
         bottom: -calc(12.5vw - 1rem);
+    }
+
+    .btn-calcul > img{
+        width: calc(15vw - 1rem);
+        max-width: 60px;
+        height: calc(15vw - 1rem);
+        max-height: 60px;
+    }
+    .parallelogramme{
+        width  : 25px;
+        border-top  : 12.5px solid var(--Purple);
+        border-right : 5px solid transparent;
+    }
+    .parallelogramme:before {
+        border-bottom : 12.5px solid var(--Purple);
+        border-right  : 5px solid transparent;
+        border-left   : 5px solid transparent;
+        position : absolute;
+        top  : -12.5px;
+        left: -20%;
+    }
+    .parallelogramme:has(+ .parallelogramme){
+        margin-right: 15px;
     }
 
 }
