@@ -6,6 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link href="style.css" rel="stylesheet" type="text/css" />  
+  <script src="script.js" defer></script>
   <title>Frontend Mentor | Age calculator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -19,15 +20,15 @@
 
       <div class = "wrapper">
         <label class ="text-label" for ="day">DAY</label>
-        <input type ="number" name = "day" placeholder="DD">
+        <input type ="text" name = "day" placeholder="DD" maxlength="2">
       </div>
       <div class = "wrapper">
         <label class ="text-label" for ="month">MONTH</label>
-        <input type ="number" name = "month" placeholder="MM">
+        <input type ="text" name = "month" placeholder="MM" maxlength="2">
       </div>
       <div class = "wrapper">
         <label class ="text-label" for ="year">YEAR</label>
-        <input type ="number" name = "year" placeholder="YYYY">
+        <input type ="text" name = "year" placeholder="YYYY" maxlength="4">
       </div>
 
     </fieldset>

@@ -64,7 +64,7 @@ fieldset{
     font-weight: 600;
 }
 
-input[type="number"]{
+input[type="text"]{
     border: var(--Light-grey) 1px solid;
     width: calc(20vw);
     max-width: 8rem;
@@ -79,7 +79,7 @@ input[type="number"]{
 }
 
 
-input[type="number"]:focus{
+input[type="text"]:focus{
     border-color: var(--Smokey-grey);
 }
 
