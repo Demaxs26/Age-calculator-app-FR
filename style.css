@@ -64,6 +64,13 @@ fieldset{
     font-weight: 600;
 }
 
+.error-message{
+    color : var(--Light-red);
+    font-size: 0.7rem;
+    margin-top: 0.3rem;
+    font-weight: 300;
+}
+
 input[type="number"]{
     border: var(--Light-grey) 1px solid;
     width: calc(20vw);
@@ -76,6 +83,14 @@ input[type="number"]{
     font-weight: 600;
     cursor: pointer;
     
+}
+
+input[type="number"]:-internal-autofill-selected {
+    background-color: none;
+}
+
+.errorStageLabel{
+    color: var(--Light-red);
 }
 
 
