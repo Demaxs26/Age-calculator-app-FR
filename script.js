@@ -43,7 +43,35 @@ const verifD = () =>{
         return false;
     };
 }
-const verif = () =>{
+
+const verifvalidday = () =>{  // for leap year and 30day months
+    const month = data[1].value;
+    const year = data[2].value;
+    if (month%2 == 0 ){
+    }
+    if ((month%2 != 0 && month > 8) || (month%2 == 0 && month < 8)){
+        if (data[0].value == 31){
+            displayError(4,0)
+            return false
+        }
+    }
+    if (month === 2 ){
+        displayError(4,0)
+        return false
+    }
+    if ( !(year%400 == 0 || (year%4 == 0 && year%100 != 0)) ){ //not leap year
+        if (data[0].value == 29){
+            displayError(4,0)
+            return false
+        }
+    }
+
+    data[0].style.borderColor = "var(--Light-grey)";
+    labelTop[0].style.color = "var(--Smokey-grey)";
+    labelBottom[0].textContent =  "";
+    return true
+}
+const verif1 = () =>{
     return  verifInt() & verifY() & verifM() & verifD() ;
 };
 
@@ -69,20 +97,18 @@ const displayError = (typrOffError,placeOffError) => {
 };
 
 const undisplayError = (e) => {
-    console.log(e.srcElement.attributes.name.nodeValue);
     inputplace = e.srcElement.attributes.name.nodeValue;
     data[inputplace].style.borderColor = "var(--Light-grey)";
     labelTop[inputplace].style.color = "var(--Smokey-grey)";
     labelBottom[inputplace].textContent =  "";
 }
 data.forEach(element =>{
-    console.log("okozdc")
     element.addEventListener("change", undisplayError)
 })
 
 // startof  process, condition: error => dispplay message ;or not => continue process
 const process = () =>{
-    if (verif()){  //if no error
+    if (verif1() && verifvalidday()){  //if no error 2nd verif is done only if verif1 is ok
         const res = calcul();
         display();
     }
