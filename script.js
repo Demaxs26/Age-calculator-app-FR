@@ -1,18 +1,45 @@
 const button = document.querySelector(".btn-calcul");
-const displayplace = document.querySelectorAll(".display");
+const displayplace = document.querySelectorAll(".display .wrapper-tirret");
 const data = document.querySelectorAll(".wrapper input");
 const labelTop = document.querySelectorAll(".wrapper .text-label")
 const labelBottom = document.querySelectorAll(".wrapper .error-message")
 const errorMessages = ["This field is required","Must be a valid day","Must be a valid Month","Must be a valid year","Must be a valid date"]
 let today = new Date(); // Today date
-console.log(today.getMonth)
 
-const display = () =>{
 
+const display = (date) =>{
+    displayplace[0].textContent = date[0];
+    displayplace[1].textContent = date[1];
+    displayplace[2].textContent = date[2];
 };
 
 const calcul = () =>{
     console.log("ok")
+    const dateyear = data[2].value;
+    const datemonth = data[1].value;
+    const dateday = data[0].value;
+    const actday = today.getDate();
+    const actmonth = today.getMonth() +1;
+    const actyear = today.getFullYear();
+    let year = actyear-dateyear;
+    let month = 0;
+    let day = 0;
+    console.log(actday,actyear)
+    if(datemonth>=actmonth){
+        year = year-1;
+        month = 12-datemonth+actmonth;
+    }
+    else{
+        month = actmonth-datemonth;
+    }
+    if (dateday>=actday){
+        month = month-1;
+        day = 30 - (dateday-actday);
+    }else{
+        day = actday-dateday;
+    }
+    console.log([day,month,year])
+    return [day,month,year]
 };
 
 const verifY = () =>{
@@ -108,14 +135,10 @@ data.forEach(element =>{
 
 // startof  process, condition: error => dispplay message ;or not => continue process
 const process = () =>{
-    if (verif1() && verifvalidday()){  //if no error 2nd verif is done only if verif1 is ok
-        const res = calcul();
-        display();
+    if (verif1() && verifvalidday()){  //if no error 2nd verif is done only if verif1 is ok ;
+        display(calcul());
     }
-    else{  //if error
-        //displayError();
-    };
-    
+
 };
 
 button.addEventListener("click", process);

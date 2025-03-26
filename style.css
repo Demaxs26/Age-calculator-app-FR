@@ -124,6 +124,8 @@ input::-webkit-inner-spin-button {
     font-size: 5.6rem;
     font-weight: 800;
     margin-left: 5vw;
+    font-family: 'Poppins';
+    font-style: oblique;
 }
 #separator{
     border-bottom : var(--Light-grey) 1px solid;
@@ -172,6 +174,7 @@ input::-webkit-inner-spin-button {
 }
 .wrapper-tirret{
     display: flex;
+    font-style: oblique;
 }
   
 
